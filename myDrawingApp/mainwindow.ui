@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDraw">
+    <property name="title">
+     <string>Draw</string>
+    </property>
+    <addaction name="actionLine"/>
+    <addaction name="actionCircle"/>
+    <addaction name="actionRectangle"/>
+   </widget>
+   <addaction name="menuDraw"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="Selection"/>
+   <addaction name="actionDrawLine"/>
+   <addaction name="actionDrawRectangle"/>
+   <addaction name="actionDrawCircle"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionLine">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/new/icons/resource/LineIcon.png</normaloff>:/new/icons/resource/LineIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actionCircle">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/new/icons/resource/CircleIcon.png</normaloff>:/new/icons/resource/CircleIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionRectangle">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/new/icons/resource/RectangleIcon.png</normaloff>:/new/icons/resource/RectangleIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rectangle</string>
+   </property>
+  </action>
+  <action name="actionDrawRectangle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/new/icons/resource/RectangleIcon.png</normaloff>:/new/icons/resource/RectangleIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rectangle</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw Rectangle</string>
+   </property>
+  </action>
+  <action name="actionDrawLine">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/new/icons/resource/LineIcon.png</normaloff>:/new/icons/resource/LineIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Line</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw Line</string>
+   </property>
+  </action>
+  <action name="actionDrawCircle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/new/icons/resource/CircleIcon.png</normaloff>:/new/icons/resource/CircleIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Circle</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw Circle</string>
+   </property>
+  </action>
+  <action name="Selection">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/new/icons/resource/CursorIcon.png</normaloff>:/new/icons/resource/CursorIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>SelectionTool</string>
+   </property>
+   <property name="toolTip">
+    <string>Selection Tool</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
