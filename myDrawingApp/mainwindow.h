@@ -6,6 +6,7 @@
 namespace Ui {
 class MainWindow;
 }
+class Canvas;
 
 class MainWindow : public QMainWindow
 {
@@ -24,9 +25,14 @@ private slots:
 
     void on_actionDrawCircle_triggered();
 
+    void on_actionCircle_triggered();
+
 private:
     Ui::MainWindow *ui;
     void uncheckAllToolBar();
+
+public:
+    Canvas *m_canvas;
 };
 
 #endif // MAINWINDOW_H

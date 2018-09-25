@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "canvas.h"
+#include "drawcircledialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -7,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->Selection->setChecked(true);
+    m_canvas=new Canvas(this);
+    setCentralWidget(m_canvas);
 }
 
 MainWindow::~MainWindow()
@@ -22,6 +26,7 @@ void MainWindow::uncheckAllToolBar()
     ui->Selection->setChecked(false);
 }
 
+//Select ToolMenuBar actions
 void MainWindow::on_actionDrawRectangle_triggered()
 {
     uncheckAllToolBar();
@@ -44,4 +49,10 @@ void MainWindow::on_actionDrawCircle_triggered()
 {
     uncheckAllToolBar();
     ui->actionDrawCircle->setChecked(true);
+}
+
+void MainWindow::on_actionCircle_triggered()
+{
+    DrawCircleDialog *circledialog=new DrawCircleDialog(this);
+    circledialog->exec();
 }

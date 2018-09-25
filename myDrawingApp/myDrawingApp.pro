@@ -24,11 +24,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    canvas.cpp \
+    drawcircledialog.cpp \
+    circle.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    canvas.h \
+    drawcircledialog.h \
+    circle.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    drawcircledialog.ui
 
 RESOURCES += \
     resource.qrc
