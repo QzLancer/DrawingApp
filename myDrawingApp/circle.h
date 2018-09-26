@@ -1,22 +1,15 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 #include <QPainter>
-
-class Circle
+#include "shape.h"
+class Circle:public Shape
 {
 public:
     Circle();
-    void setXPosition(int x);
-    void setYPosition(int y);
     void setRadius(int r);
-    int getXposition() const;
-    int getYposition() const;
     int getRadius() const;
-    void draw(QPainter *painter);
-
+    void draw(QPainter *painter) override;
 private:
-    int XPosition;
-    int YPosition;
     int Radius;
 };
 

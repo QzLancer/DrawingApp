@@ -27,12 +27,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     canvas.cpp \
     drawcircledialog.cpp \
-    circle.cpp
+    circle.cpp \
+    shape.cpp \
+    group.cpp
 
 HEADERS  += mainwindow.h \
     canvas.h \
     drawcircledialog.h \
-    circle.h
+    circle.h \
+    shape.h \
+    group.h
 
 FORMS    += mainwindow.ui \
     drawcircledialog.ui

@@ -10,8 +10,8 @@ Canvas::Canvas(QWidget *parent) : QWidget(parent)
 void Canvas::paintEvent(QPaintEvent *event)
 {
     QPainter *painter = new QPainter(this);
-    for(Circle *circle : c_circle)
-        painter->drawEllipse(circle->getXposition(),circle->getYposition(),circle->getRadius(),circle->getRadius());
+    for(Shape *shape: ShapeGroup)
+        shape->draw(painter);
 
 }
 
@@ -20,7 +20,7 @@ Canvas::~Canvas()
 
 }
 
-void Canvas::AddCircle(Circle *c)
+void Canvas::AddShape(Shape *shape)
 {
-    c_circle.push_back(c);
+    ShapeGroup.push_back(shape);
 }

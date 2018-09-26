@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPaintEvent>
 #include <Vector>
+#include "group.h"
 class Circle;
 class Canvas : public QWidget
 {
@@ -11,7 +12,7 @@ class Canvas : public QWidget
 public:
     explicit Canvas(QWidget *parent = 0);
     ~Canvas();
-    void AddCircle(Circle *c);
+    void AddShape(Shape *shape);
 signals:
 
 public slots:
@@ -20,7 +21,7 @@ protected:
     void paintEvent(QPaintEvent *event);
 
 public:
-    std::vector<Circle*> c_circle;
+    std::vector <Shape*> ShapeGroup;
 };
 
 #endif // CANVAS_H

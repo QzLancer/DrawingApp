@@ -2,34 +2,12 @@
 
 Circle::Circle()
 {
-    XPosition=50;
-    YPosition=50;
-    Radius=50;
-}
-
-void Circle::setXPosition(int x)
-{
-    XPosition=x;
-}
-
-void Circle::setYPosition(int y)
-{
-    YPosition=y;
+    Radius = 50;
 }
 
 void Circle::setRadius(int r)
 {
-    Radius=r;
-}
-
-int Circle::getXposition() const
-{
-    return XPosition;
-}
-
-int Circle::getYposition() const
-{
-    return YPosition;
+    Radius = r;
 }
 
 int Circle::getRadius() const
@@ -39,5 +17,5 @@ int Circle::getRadius() const
 
 void Circle::draw(QPainter *painter)
 {
-    painter->drawEllipse(XPosition,YPosition,Radius,Radius);
+    painter->drawEllipse(getStartPoint(),Radius,Radius);
 }

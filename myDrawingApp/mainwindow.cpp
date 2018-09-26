@@ -56,5 +56,5 @@ void MainWindow::on_actionCircle_triggered()
     Circle *m_circle=new Circle;
     DrawCircleDialog *circledialog=new DrawCircleDialog(this,m_circle);
     circledialog->show();
-    m_canvas->AddCircle(m_circle);
+    m_canvas->AddShape(m_circle);
 }

@@ -35,13 +35,13 @@ void DrawCircleDialog::on_RadiusBox_valueChanged(int arg1)
 
 void DrawCircleDialog::on_Xbox_valueChanged(int arg1)
 {
-    m_circle->setXPosition(ui->Xbox->value());
+    m_circle->setStartPoint(QPoint(ui->Xbox->value(),ui->Ybox->value()));
     p_mainwindow->m_canvas->repaint();
 }
 
 
 void DrawCircleDialog::on_Ybox_valueChanged(int arg1)
 {
-    m_circle->setYPosition(ui->Ybox->value());
+    m_circle->setStartPoint(QPoint(ui->Xbox->value(),ui->Ybox->value()));
     p_mainwindow->m_canvas->repaint();
 }
