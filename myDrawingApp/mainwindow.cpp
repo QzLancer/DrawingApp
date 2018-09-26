@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "canvas.h"
 #include "drawcircledialog.h"
-
+#include "circle.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -53,6 +53,8 @@ void MainWindow::on_actionDrawCircle_triggered()
 
 void MainWindow::on_actionCircle_triggered()
 {
-    DrawCircleDialog *circledialog=new DrawCircleDialog(this);
+    Circle *m_circle=new Circle;
+    DrawCircleDialog *circledialog=new DrawCircleDialog(this,m_circle);
     circledialog->exec();
+    m_canvas->AddCircle(m_circle);
 }

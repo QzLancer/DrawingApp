@@ -4,7 +4,7 @@ Circle::Circle()
 {
     XPosition=50;
     YPosition=50;
-    Radius=5;
+    Radius=50;
 }
 
 void Circle::setXPosition(int x)

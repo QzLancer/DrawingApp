@@ -4,9 +4,10 @@
 #include "canvas.h"
 
 
-DrawCircleDialog::DrawCircleDialog(MainWindow *parent) :
+DrawCircleDialog::DrawCircleDialog(MainWindow *parent,Circle *circle) :
     QDialog(parent),
-    ui(new Ui::DrawCircleDialog)
+    ui(new Ui::DrawCircleDialog),
+    m_circle(circle)
 {
     ui->setupUi(this);
     p_mainwindow=parent;
@@ -20,10 +21,25 @@ DrawCircleDialog::~DrawCircleDialog()
 
 void DrawCircleDialog::on_OKButton_clicked()
 {
-    Circle *p_circle1=p_mainwindow->m_canvas->p_circle;
-    p_circle1->setRadius(ui->RadiusBox->value());
-    p_circle1->setXPosition(ui->Xbox->value());
-    p_circle1->setYPosition(ui->Ybox->value());
     p_mainwindow->m_canvas->update();
     close();
+}
+
+void DrawCircleDialog::on_RadiusBox_valueChanged(int arg1)
+{
+    m_circle->setRadius(ui->RadiusBox->value());
+    p_mainwindow->m_canvas->repaint();
+}
+
+void DrawCircleDialog::on_Xbox_valueChanged(int arg1)
+{
+    m_circle->setXPosition(ui->Xbox->value());
+    p_mainwindow->m_canvas->repaint();
+}
+
+
+void DrawCircleDialog::on_Ybox_valueChanged(int arg1)
+{
+    m_circle->setYPosition(ui->Ybox->value());
+    p_mainwindow->m_canvas->repaint();
 }

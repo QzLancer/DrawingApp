@@ -3,19 +3,24 @@
 #include "circle.h"
 Canvas::Canvas(QWidget *parent) : QWidget(parent)
 {
-    p_circle = new Circle;
     setPalette(QPalette(Qt::white));
     setAutoFillBackground(true);
 }
 
 void Canvas::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
-    p_circle->draw(&painter);
+    QPainter *painter = new QPainter(this);
+    for(Circle *circle : c_circle)
+        painter->drawEllipse(circle->getXposition(),circle->getYposition(),circle->getRadius(),circle->getRadius());
+
 }
 
 Canvas::~Canvas()
 {
-    if(p_circle != nullptr)
-        delete p_circle;
+
+}
+
+void Canvas::AddCircle(Circle *c)
+{
+    c_circle.push_back(c);
 }

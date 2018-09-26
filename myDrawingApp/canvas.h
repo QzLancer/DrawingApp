@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QPaintEvent>
+#include <Vector>
 class Circle;
 class Canvas : public QWidget
 {
@@ -10,6 +11,7 @@ class Canvas : public QWidget
 public:
     explicit Canvas(QWidget *parent = 0);
     ~Canvas();
+    void AddCircle(Circle *c);
 signals:
 
 public slots:
@@ -18,7 +20,7 @@ protected:
     void paintEvent(QPaintEvent *event);
 
 public:
-    Circle *p_circle;
+    std::vector<Circle*> c_circle;
 };
 
 #endif // CANVAS_H
