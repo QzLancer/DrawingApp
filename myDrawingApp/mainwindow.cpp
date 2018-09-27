@@ -4,6 +4,8 @@
 #include "drawcircledialog.h"
 #include "circle.h"
 #include "drawlinedialog.h"
+#include "rectangle.h"
+#include "drawrectangledialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -56,7 +58,7 @@ void MainWindow::on_actionDrawCircle_triggered()
 void MainWindow::on_actionCircle_triggered()
 {
     Circle *m_circle=new Circle;
-    DrawCircleDialog *circledialog=new DrawCircleDialog(this,m_circle);
+    DrawCircleDialog *circledialog=new DrawCircleDialog(this, m_circle);
     circledialog->show();
     m_canvas->AddShape(m_circle);
 }
@@ -67,4 +69,12 @@ void MainWindow::on_actionLine_triggered()
     DrawLineDialog *linedialog=new DrawLineDialog(this, m_line);
     linedialog->show();
     m_canvas->AddShape(m_line);
+}
+
+void MainWindow::on_actionRectangle_triggered()
+{
+    Rectangle *m_rectangle=new Rectangle;
+    DrawRectangleDialog *recdialog=new DrawRectangleDialog(this, m_rectangle);
+    recdialog->show();
+    m_canvas->AddShape(m_rectangle);
 }

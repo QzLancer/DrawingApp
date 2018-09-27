@@ -29,6 +29,8 @@ private slots:
 
     void on_actionLine_triggered();
 
+    void on_actionRectangle_triggered();
+
 private:
     Ui::MainWindow *ui;
     void uncheckAllToolBar();

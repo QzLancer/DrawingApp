@@ -26,6 +26,8 @@ private slots:
 
     void on_Y2box_valueChanged(int arg1);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::DrawLineDialog *ui;
     MainWindow *p_mainwindow;

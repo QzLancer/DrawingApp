@@ -24,21 +24,21 @@
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QLabel" name="X1Label">
+     <widget class="QLabel" name="XLabel">
       <property name="text">
        <string>X1 Position</string>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QSpinBox" name="X1box">
+     <widget class="QSpinBox" name="Xbox">
       <property name="maximum">
        <number>999</number>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QLabel" name="Y1Label">
+     <widget class="QLabel" name="YLabel">
       <property name="text">
        <string>Y1 Position</string>
       </property>

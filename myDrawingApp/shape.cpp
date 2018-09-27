@@ -2,7 +2,8 @@
 #include <QPoint>
 Shape::Shape()
 {
-    StartPoint=QPoint(50,50);
+    StartPoint.setX(50);
+    StartPoint.setY(50);
 }
 
 QPoint Shape::getStartPoint() const
