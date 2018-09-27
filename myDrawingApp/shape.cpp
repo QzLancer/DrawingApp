@@ -14,3 +14,9 @@ void Shape::setStartPoint(QPoint point)
 {
     StartPoint = point;
 }
+
+void Shape::setStartPoint(int x, int y)
+{
+    StartPoint.setX(x);
+    StartPoint.setY(y);
+}

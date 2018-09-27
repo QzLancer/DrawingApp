@@ -2,20 +2,20 @@
 
 Circle::Circle()
 {
-    Radius = 50;
+    radius = 50;
 }
 
 void Circle::setRadius(int r)
 {
-    Radius = r;
+    radius = r;
 }
 
 int Circle::getRadius() const
 {
-    return Radius;
+    return radius;
 }
 
 void Circle::draw(QPainter *painter)
 {
-    painter->drawEllipse(getStartPoint(),Radius,Radius);
+    painter->drawEllipse(getStartPoint(),radius,radius);
 }

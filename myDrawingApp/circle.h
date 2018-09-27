@@ -10,7 +10,7 @@ public:
     int getRadius() const;
     void draw(QPainter *painter) override;
 private:
-    int Radius;
+    int radius;
 };
 
 #endif // CIRCLE_H

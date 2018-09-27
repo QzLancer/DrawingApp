@@ -1,6 +1,6 @@
 #include "canvas.h"
 #include <QPainter>
-#include "circle.h"
+
 Canvas::Canvas(QWidget *parent) : QWidget(parent)
 {
     setPalette(QPalette(Qt::white));
@@ -23,4 +23,5 @@ Canvas::~Canvas()
 void Canvas::AddShape(Shape *shape)
 {
     ShapeGroup.push_back(shape);
+
 }

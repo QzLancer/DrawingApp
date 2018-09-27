@@ -23,7 +23,7 @@ DrawCircleDialog::~DrawCircleDialog()
 
 void DrawCircleDialog::on_OKButton_clicked()
 {
-    p_mainwindow->m_canvas->update();
+    p_mainwindow->m_canvas->repaint();
     close();
 }
 

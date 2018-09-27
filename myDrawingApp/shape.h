@@ -9,6 +9,7 @@ public:
     Shape();
     QPoint getStartPoint() const;
     void setStartPoint(QPoint point);
+    void setStartPoint(int x, int y);
     virtual void draw(QPainter *painter) = 0;
 
 private:

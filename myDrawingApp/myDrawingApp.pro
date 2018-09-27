@@ -29,17 +29,27 @@ SOURCES += main.cpp\
     drawcircledialog.cpp \
     circle.cpp \
     shape.cpp \
-    group.cpp
+    group.cpp \
+    line.cpp \
+    rectangle.cpp \
+    drawlinedialog.cpp \
+    drawrectangledialog.cpp
 
 HEADERS  += mainwindow.h \
     canvas.h \
     drawcircledialog.h \
     circle.h \
     shape.h \
-    group.h
+    group.h \
+    line.h \
+    rectangle.h \
+    drawlinedialog.h \
+    drawrectangledialog.h
 
 FORMS    += mainwindow.ui \
-    drawcircledialog.ui
+    drawcircledialog.ui \
+    drawlinedialog.ui \
+    drawrectangledialog.ui
 
 RESOURCES += \
     resource.qrc
