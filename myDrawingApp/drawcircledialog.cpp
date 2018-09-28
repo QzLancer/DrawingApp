@@ -12,8 +12,8 @@ DrawCircleDialog::DrawCircleDialog(MainWindow *parent,Circle *circle) :
     ui->setupUi(this);
     p_mainwindow=parent;
     ui->RadiusBox->setValue(m_circle->getRadius());
-    ui->Xbox->setValue(m_circle->getStartPoint().x());
     ui->Ybox->setValue(m_circle->getStartPoint().y());
+    ui->Xbox->setValue(m_circle->getStartPoint().x());
 }
 
 DrawCircleDialog::~DrawCircleDialog()

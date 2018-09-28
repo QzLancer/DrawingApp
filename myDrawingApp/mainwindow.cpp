@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->Selection->setChecked(true);
-    m_canvas=new Canvas(this);
+    m_canvas = new Canvas(this);
     setCentralWidget(m_canvas);
 }
 

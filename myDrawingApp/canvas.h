@@ -5,6 +5,9 @@
 #include <QPaintEvent>
 #include <Vector>
 #include "group.h"
+#include "mainwindow.h"
+#include "drawaction.h"
+
 class Circle;
 class Canvas : public QWidget
 {
@@ -19,9 +22,14 @@ public slots:
 
 protected:
     void paintEvent(QPaintEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
 
 public:
     std::vector <Shape*> ShapeGroup;
+    QWidget *c_mainwindow;
+    DrawAction *c_action;
+
 };
 
 #endif // CANVAS_H

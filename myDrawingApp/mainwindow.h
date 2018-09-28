@@ -37,6 +37,7 @@ private:
 
 public:
     Canvas *m_canvas;
+
 };
 
 #endif // MAINWINDOW_H
