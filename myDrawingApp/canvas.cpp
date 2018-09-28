@@ -24,9 +24,7 @@ void Canvas::mousePressEvent(QMouseEvent *event)
     qDebug() << tr("mousePressEvent");
     if(event->button()==Qt::LeftButton)
     {
-        Circle *circle = new Circle;
-        c_action->mousePress(event->pos(),circle);
-        ShapeGroup.push_back(circle);
+        c_action->mousePress(event->pos(),this);
         repaint();
     }
 }
@@ -39,6 +37,7 @@ void Canvas::mouseMoveEvent(QMouseEvent *event)
         c_action->mouseMove(event->pos());
         repaint();
     }
+
 }
 
 Canvas::~Canvas()

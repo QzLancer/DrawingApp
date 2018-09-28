@@ -1,26 +1,30 @@
 #include "drawaction.h"
 #include <math.h>
 #include <QDebug>
+#include "canvas.h"
+#include "circle.h"
+
 DrawAction::DrawAction()
 {
-
+    c_circle = new Circle;
 }
 
-void DrawAction::mousePress(QPoint point, Circle *circle)
+void DrawAction::mousePress(QPoint point, Canvas *canvas)
 {
-    StartPoint.setX(point.x());
-    StartPoint.setY(point.y());
-    Radius = 0;
+    d_canvas = canvas;
+    StartPoint = point;
+    Circle *circle = new Circle;
     c_circle = circle;
-    c_circle->setStartPoint(StartPoint);
-    c_circle->setRadius(Radius);
+    c_circle->setStartPoint(point);
+    c_circle->setRadius(0);
+    d_canvas->ShapeGroup.push_back(c_circle);
 }
 
 void DrawAction::mouseMove(QPoint point)
 {
-    Radius=sqrt(((StartPoint.x()-point.x())*(StartPoint.x()-point.x()))+((point.y()-StartPoint.y())*(point.y()-StartPoint.y())));
-    c_circle->setRadius(Radius);
-    qDebug() << "StartPoint:" << StartPoint.x()<< "," << StartPoint.y();
+    int radius = sqrt(pow((point.x()-StartPoint.x()),2)+pow((point.y()-StartPoint.y()),2));
+    c_circle->setRadius(radius);
+    qDebug() << "radius:" << radius;
+    qDebug() << "StartPoint:" << StartPoint.x() << "," << StartPoint.y();
     qDebug() << "Point:" << point.x() << "," << point.y();
-    qDebug() << "Radius:" << Radius;
 }
