@@ -5,7 +5,8 @@
 
 Canvas::Canvas(QWidget *parent) : QWidget(parent),
     c_mainwindow(parent),
-    c_action(new DrawAction)
+    c_action(new DrawAction),
+    ShapeGroup(new Group)
 {
     setPalette(QPalette(Qt::white));
     setAutoFillBackground(true);
@@ -14,8 +15,7 @@ Canvas::Canvas(QWidget *parent) : QWidget(parent),
 void Canvas::paintEvent(QPaintEvent *event)
 {
     QPainter *painter = new QPainter(this);
-    for(Shape *shape: ShapeGroup)
-        shape->draw(painter);
+        ShapeGroup->draw(painter);
 
 }
 
@@ -48,6 +48,6 @@ Canvas::~Canvas()
 
 void Canvas::AddShape(Shape *shape)
 {
-    ShapeGroup.push_back(shape);
+    ShapeGroup->addShape(shape);
 
 }

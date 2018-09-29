@@ -6,6 +6,7 @@
 #include "drawlinedialog.h"
 #include "rectangle.h"
 #include "drawrectangledialog.h"
+enum ToolAction{Selection, ActionLine, ActionCircle, ActionRectangle} Action;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->Selection->setChecked(true);
     m_canvas = new Canvas(this);
     setCentralWidget(m_canvas);
+    Action = Selection;
 }
 
 MainWindow::~MainWindow()
@@ -35,24 +37,28 @@ void MainWindow::on_actionDrawRectangle_triggered()
 {
     uncheckAllToolBar();
     ui->actionDrawRectangle->setChecked(true);
+    Action = ActionRectangle;
 }
 
 void MainWindow::on_Selection_triggered()
 {
     uncheckAllToolBar();
     ui->Selection->setChecked(true);
+    Action = Selection;
 }
 
 void MainWindow::on_actionDrawLine_triggered()
 {
     uncheckAllToolBar();
     ui->actionDrawLine->setChecked(true);
+    Action = ActionLine;
 }
 
 void MainWindow::on_actionDrawCircle_triggered()
 {
     uncheckAllToolBar();
     ui->actionDrawCircle->setChecked(true);
+    Action = ActionCircle;
 }
 
 void MainWindow::on_actionCircle_triggered()

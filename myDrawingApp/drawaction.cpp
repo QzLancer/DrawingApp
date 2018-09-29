@@ -17,7 +17,7 @@ void DrawAction::mousePress(QPoint point, Canvas *canvas)
     c_circle = circle;
     c_circle->setStartPoint(point);
     c_circle->setRadius(0);
-    d_canvas->ShapeGroup.push_back(c_circle);
+    d_canvas->ShapeGroup->addShape(c_circle);
 }
 
 void DrawAction::mouseMove(QPoint point)

@@ -26,7 +26,7 @@ protected:
     void mouseMoveEvent(QMouseEvent *event);
 
 public:
-    std::vector <Shape*> ShapeGroup;
+    Group *ShapeGroup;
     QWidget *c_mainwindow;
     DrawAction *c_action;
 

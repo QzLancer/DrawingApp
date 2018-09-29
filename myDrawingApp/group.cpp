@@ -19,3 +19,9 @@ int Group::getGroupSize()
 {
     return vecShape.size();
 }
+
+void Group::draw(QPainter *painter)
+{
+    for(Shape *shape: vecShape)
+        shape->draw(painter);
+}
