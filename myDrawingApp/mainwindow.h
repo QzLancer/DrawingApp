@@ -2,11 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "tool.h"
+#include <memory>
 namespace Ui {
 class MainWindow;
 }
 class Canvas;
+class DrawCircleTool;
 
 class MainWindow : public QMainWindow
 {
@@ -15,6 +17,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void setActiveTool(Tool *tool);
 
 private slots:
     void on_actionDrawRectangle_triggered();
@@ -34,6 +37,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
     void uncheckAllToolBar();
+    Tool *m_tool;
+    std::unique_ptr<DrawCircleTool> m_drawCircleTool;
+
 
 public:
     Canvas *m_canvas;

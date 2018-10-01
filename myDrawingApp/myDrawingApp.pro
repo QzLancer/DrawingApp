@@ -34,8 +34,8 @@ SOURCES += main.cpp\
     rectangle.cpp \
     drawlinedialog.cpp \
     drawrectangledialog.cpp \
-    drawaction.cpp \
-    drawcircletool.cpp
+    tool.cpp \
+    tools/drawcircletool.cpp
 
 HEADERS  += mainwindow.h \
     canvas.h \
@@ -47,8 +47,8 @@ HEADERS  += mainwindow.h \
     rectangle.h \
     drawlinedialog.h \
     drawrectangledialog.h \
-    drawaction.h \
-    drawcircletool.h
+    tool.h \
+    tools/drawcircletool.h
 
 FORMS    += mainwindow.ui \
     drawcircledialog.ui \

@@ -3,10 +3,10 @@
 #include "circle.h"
 #include <QDebug>
 
+
 Canvas::Canvas(QWidget *parent) : QWidget(parent),
-    c_mainwindow(parent),
-    c_action(new DrawAction),
-    ShapeGroup(new Group)
+    ShapeGroup(new Group),
+    c_mainwindow(parent)
 {
     setPalette(QPalette(Qt::white));
     setAutoFillBackground(true);
@@ -14,40 +14,40 @@ Canvas::Canvas(QWidget *parent) : QWidget(parent),
 
 void Canvas::paintEvent(QPaintEvent *event)
 {
+    qDebug() << "paintEvent.";
     QPainter *painter = new QPainter(this);
         ShapeGroup->draw(painter);
 
 }
 
-void Canvas::mousePressEvent(QMouseEvent *event)
+bool Canvas::event(QEvent *event)
 {
-    qDebug() << tr("mousePressEvent");
-    if(event->button()==Qt::LeftButton)
+    if(event->type() == QEvent::Paint)
     {
-        c_action->mousePress(event->pos(),this);
-        repaint();
-    }
-}
-
-void Canvas::mouseMoveEvent(QMouseEvent *event)
-{
-    qDebug() << tr("mouseMoveEvent");
-    if(event->buttons()&Qt::LeftButton)
-    {
-        c_action->mouseMove(event->pos());
-        repaint();
+        QPaintEvent *ke = reinterpret_cast<QPaintEvent *>(event);
+        paintEvent(ke);
+        return true;
     }
 
+    bool result = m_tools->HandleEvent(event);
+
+    repaint();
+
+    return result;
 }
 
 Canvas::~Canvas()
 {
-    if(c_action != nullptr)
-        delete c_action;
+
 }
 
 void Canvas::AddShape(Shape *shape)
 {
     ShapeGroup->addShape(shape);
 
+}
+
+void Canvas::setActiveTool(Tool *tool)
+{
+    m_tools = tool;
 }

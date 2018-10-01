@@ -14,7 +14,7 @@ class DrawCircleDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit DrawCircleDialog(MainWindow *parent = 0,Circle *circle=0);
+    explicit DrawCircleDialog(MainWindow *parent = 0,Circle *circle = 0);
     ~DrawCircleDialog();
 
 private slots:
