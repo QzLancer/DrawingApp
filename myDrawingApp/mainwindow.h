@@ -4,11 +4,13 @@
 #include <QMainWindow>
 #include "tool.h"
 #include <memory>
+
 namespace Ui {
 class MainWindow;
 }
 class Canvas;
 class DrawCircleTool;
+class DrawLineTool;
 
 class MainWindow : public QMainWindow
 {
@@ -39,6 +41,7 @@ private:
     void uncheckAllToolBar();
     Tool *m_tool;
     std::unique_ptr<DrawCircleTool> m_drawCircleTool;
+    std::unique_ptr<DrawLineTool> m_drawLineTool;
 
 
 public:
