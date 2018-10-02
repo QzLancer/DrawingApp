@@ -8,6 +8,7 @@
 #include "drawrectangledialog.h"
 #include "tools/drawcircletool.h"
 #include "tools/drawlinetool.h"
+#include "tools/drawrectangletool.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -22,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent) :
             (new DrawCircleTool(m_canvas));
     m_drawLineTool = std::unique_ptr<DrawLineTool>
             (new DrawLineTool(m_canvas));
+    m_drawRectangleTool = std::unique_ptr<DrawRectangleTool>
+            (new DrawRectangleTool(m_canvas));
 }
 
 MainWindow::~MainWindow()
@@ -42,6 +45,7 @@ void MainWindow::on_actionDrawRectangle_triggered()
 {
     uncheckAllToolBar();
     ui->actionDrawRectangle->setChecked(true);
+    setActiveTool(m_drawRectangleTool.get());
 }
 
 void MainWindow::on_Selection_triggered()

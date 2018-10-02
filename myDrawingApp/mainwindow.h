@@ -11,7 +11,7 @@ class MainWindow;
 class Canvas;
 class DrawCircleTool;
 class DrawLineTool;
-
+class DrawRectangleTool;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -42,6 +42,7 @@ private:
     Tool *m_tool;
     std::unique_ptr<DrawCircleTool> m_drawCircleTool;
     std::unique_ptr<DrawLineTool> m_drawLineTool;
+    std::unique_ptr<DrawRectangleTool> m_drawRectangleTool;
 
 
 public:
