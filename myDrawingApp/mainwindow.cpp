@@ -9,6 +9,7 @@
 #include "tools/drawcircletool.h"
 #include "tools/drawlinetool.h"
 #include "tools/drawrectangletool.h"
+#include "tools/selectiontool.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -25,6 +26,9 @@ MainWindow::MainWindow(QWidget *parent) :
             (new DrawLineTool(m_canvas));
     m_drawRectangleTool = std::unique_ptr<DrawRectangleTool>
             (new DrawRectangleTool(m_canvas));
+    m_SelectionTool = std::unique_ptr<SelectionTool>
+            (new SelectionTool(m_canvas));
+    setActiveTool(m_SelectionTool.get());
 }
 
 MainWindow::~MainWindow()
@@ -52,6 +56,7 @@ void MainWindow::on_Selection_triggered()
 {
     uncheckAllToolBar();
     ui->Selection->setChecked(true);
+    setActiveTool(m_SelectionTool.get());
 }
 
 void MainWindow::on_actionDrawLine_triggered()
