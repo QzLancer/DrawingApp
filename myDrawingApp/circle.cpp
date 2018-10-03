@@ -3,6 +3,8 @@
 Circle::Circle()
 {
     radius = 50;
+    setPenColor(Qt::green);
+    setPenWidth(5);
 }
 
 void Circle::setRadius(int r)
@@ -17,5 +19,6 @@ int Circle::getRadius() const
 
 void Circle::draw(QPainter *painter)
 {
+    setPen(painter);
     painter->drawEllipse(getStartPoint(),radius,radius);
 }

@@ -21,3 +21,28 @@ void Shape::setStartPoint(int x, int y)
     StartPoint.setX(x);
     StartPoint.setY(y);
 }
+
+int Shape::getPenWidth()
+{
+    return pen.width();
+}
+
+QColor Shape::getPenColor()
+{
+    return pen.color();
+}
+
+void Shape::setPenWidth(int width)
+{
+    pen.setWidth(width);
+}
+
+void Shape::setPenColor(QColor color)
+{
+    pen.setColor(color);
+}
+
+void Shape::setPen(QPainter *painter)
+{
+    painter->setPen(pen);
+}
