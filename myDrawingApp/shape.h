@@ -3,6 +3,8 @@
 #include <QPoint>
 #include <QPainter>
 #include <QPen>
+#include "mainwindow.h"
+
 //后续可添加线宽等参数
 class Shape
 {

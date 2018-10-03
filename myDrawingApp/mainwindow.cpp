@@ -10,6 +10,9 @@
 #include "tools/drawlinetool.h"
 #include "tools/drawrectangletool.h"
 #include "tools/selectiontool.h"
+#include <QPainter>
+#include <QColorDialog>
+#include <QPalette>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -29,6 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
     m_SelectionTool = std::unique_ptr<SelectionTool>
             (new SelectionTool(m_canvas));
     setActiveTool(m_SelectionTool.get());
+    ui->dockWidget->setBaseSize(199,335);
+
 }
 
 MainWindow::~MainWindow()
@@ -43,6 +48,7 @@ void MainWindow::uncheckAllToolBar()
     ui->actionDrawRectangle->setChecked(false);
     ui->Selection->setChecked(false);
 }
+
 
 //Select ToolMenuBar actions
 void MainWindow::on_actionDrawRectangle_triggered()
@@ -101,4 +107,26 @@ void MainWindow::setActiveTool(Tool *tool)
 {
     m_tool = tool;
     m_canvas->setActiveTool(m_tool);
+}
+
+void MainWindow::on_ColorButton_clicked()
+{
+    lineColor = QColorDialog::getColor();
+    QPalette palette = ui->ColorButton->palette();
+    palette.setColor(QPalette::Button,lineColor);
+    ui->ColorButton->setPalette(palette);
+    ui->ColorButton->setAutoFillBackground(true);
+    ui->ColorButton->setFlat(true);
+    pen.setColor(lineColor);
+}
+
+void MainWindow::on_LineWidthBox_valueChanged(int arg1)
+{
+    lineWidth = ui->LineWidthBox->value();
+    pen.setWidth(lineWidth);
+}
+
+QPen MainWindow::getPen()
+{
+    return pen;
 }

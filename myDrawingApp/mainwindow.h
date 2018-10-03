@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "tool.h"
 #include <memory>
+#include <QPen>
 
 namespace Ui {
 class MainWindow;
@@ -22,6 +23,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void setActiveTool(Tool *tool);
+    QPen getPen();
 
 private slots:
     void on_actionDrawRectangle_triggered();
@@ -38,6 +40,10 @@ private slots:
 
     void on_actionRectangle_triggered();
 
+    void on_ColorButton_clicked();
+
+    void on_LineWidthBox_valueChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     void uncheckAllToolBar();
@@ -46,6 +52,9 @@ private:
     std::unique_ptr<DrawLineTool> m_drawLineTool;
     std::unique_ptr<DrawRectangleTool> m_drawRectangleTool;
     std::unique_ptr<SelectionTool> m_SelectionTool;
+    QColor lineColor;
+    int lineWidth;
+    QPen pen;
 
 public:
     Canvas *m_canvas;

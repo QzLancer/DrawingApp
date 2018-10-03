@@ -7,6 +7,7 @@
 #include "group.h"
 #include "mainwindow.h"
 #include <QEvent>
+#include <QPen>
 
 class Circle;
 class Tool;
@@ -15,7 +16,7 @@ class Canvas : public QWidget
 {
     Q_OBJECT
 public:
-    explicit Canvas(QWidget *parent = 0);
+    explicit Canvas(MainWindow *parent = 0);
     ~Canvas();
     void AddShape(Shape *shape);
     void setActiveTool(Tool *tool);
@@ -31,8 +32,9 @@ protected:
 
 public:
     Group *ShapeGroup;
-    QWidget *c_mainwindow;
+    MainWindow *c_mainwindow;
     Tool *m_tools;
+    QPen pen;
 
 };
 

@@ -4,7 +4,7 @@
 #include <QDebug>
 
 
-Canvas::Canvas(QWidget *parent) : QWidget(parent),
+Canvas::Canvas(MainWindow *parent) : QWidget(parent),
     ShapeGroup(new Group),
     c_mainwindow(parent)
 {
@@ -16,7 +16,8 @@ void Canvas::paintEvent(QPaintEvent *event)
 {
     qDebug() << "paintEvent.";
     QPainter *painter = new QPainter(this);
-        ShapeGroup->draw(painter);
+    painter->setPen(c_mainwindow->getPen());
+    ShapeGroup->draw(painter);
 
 }
 
