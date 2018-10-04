@@ -3,7 +3,7 @@
 #include <QMouseEvent>
 #include <QKeyEvent>
 #include "canvas.h"
-#include <QPen>
+
 Tool::Tool(Canvas *canvas):m_canvas(canvas)
 {
 
@@ -32,4 +32,9 @@ bool Tool::HandleEvent(QEvent *event)
     }
 
     return true;
+}
+
+void Tool::setPen(QPen pen)
+{
+    m_pen = pen;
 }

@@ -33,6 +33,11 @@ MainWindow::MainWindow(QWidget *parent) :
             (new SelectionTool(m_canvas));
     setActiveTool(m_SelectionTool.get());
     ui->dockWidget->setBaseSize(199,335);
+    QPalette palette = ui->ColorButton->palette();
+    palette.setColor(QPalette::Button, Qt::black);
+    ui->ColorButton->setPalette(palette);
+    ui->ColorButton->setAutoFillBackground(true);
+    ui->ColorButton->setFlat(true);
 
 }
 

@@ -21,6 +21,8 @@ void DrawCircleTool::mousePress(QMouseEvent *event)
     qDebug()<< "mousePress";
     StartPoint = event->pos();
     m_circle = new Circle;
+    m_circle->setPenColor(m_pen.color());
+    m_circle->setPenWidth(m_pen.width());
     m_canvas->AddShape(m_circle);
     m_circle->setStartPoint(event->pos());
     m_circle->setRadius(0);

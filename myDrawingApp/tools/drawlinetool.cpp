@@ -13,6 +13,8 @@ void DrawLineTool::mousePress(QMouseEvent *event)
 {
     StartPoint = event->pos();
     m_line = new Line;
+    m_line->setPenColor(m_pen.color());
+    m_line->setPenWidth(m_pen.width());
     m_canvas->AddShape(m_line);
     m_line->setStartPoint(StartPoint);
     m_line->setPoint(StartPoint);

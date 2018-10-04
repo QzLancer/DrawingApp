@@ -6,7 +6,8 @@
 
 Canvas::Canvas(MainWindow *parent) : QWidget(parent),
     ShapeGroup(new Group),
-    c_mainwindow(parent)
+    c_mainwindow(parent),
+    m_tools(new Tool(this))
 {
     setPalette(QPalette(Qt::white));
     setAutoFillBackground(true);
@@ -30,7 +31,8 @@ bool Canvas::event(QEvent *event)
     }
 
     bool result = m_tools->HandleEvent(event);
-
+    pen = c_mainwindow->getPen();
+    m_tools->setPen(pen);
     repaint();
 
     return result;
