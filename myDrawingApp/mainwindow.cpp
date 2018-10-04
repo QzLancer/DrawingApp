@@ -82,6 +82,8 @@ void MainWindow::on_actionDrawCircle_triggered()
 void MainWindow::on_actionCircle_triggered()
 {
     Circle *m_circle=new Circle;
+    m_circle->setPenColor(lineColor);
+    m_circle->setPenWidth(lineWidth);
     DrawCircleDialog *circledialog=new DrawCircleDialog(this, m_circle);
     circledialog->show();
     m_canvas->AddShape(m_circle);
@@ -90,6 +92,8 @@ void MainWindow::on_actionCircle_triggered()
 void MainWindow::on_actionLine_triggered()
 {
     Line *m_line=new Line;
+    m_line->setPenColor(lineColor);
+    m_line->setPenWidth(lineWidth);
     DrawLineDialog *linedialog=new DrawLineDialog(this, m_line);
     linedialog->show();
     m_canvas->AddShape(m_line);
@@ -98,6 +102,8 @@ void MainWindow::on_actionLine_triggered()
 void MainWindow::on_actionRectangle_triggered()
 {
     Rectangle *m_rectangle=new Rectangle;
+    m_rectangle->setPenColor(lineColor);
+    m_rectangle->setPenWidth(lineWidth);
     DrawRectangleDialog *recdialog=new DrawRectangleDialog(this, m_rectangle);
     recdialog->show();
     m_canvas->AddShape(m_rectangle);

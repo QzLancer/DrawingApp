@@ -16,7 +16,6 @@ void Canvas::paintEvent(QPaintEvent *event)
 {
     qDebug() << "paintEvent.";
     QPainter *painter = new QPainter(this);
-    painter->setPen(c_mainwindow->getPen());
     ShapeGroup->draw(painter);
 
 }

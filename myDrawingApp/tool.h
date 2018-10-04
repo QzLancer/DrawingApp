@@ -6,6 +6,7 @@ class QEvent;
 class QMouseEvent;
 class QKeyEvent;
 class Canvas;
+class QPen;
 
 class Tool
 {

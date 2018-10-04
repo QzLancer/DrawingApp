@@ -3,6 +3,7 @@
 #include <QMouseEvent>
 #include <QKeyEvent>
 #include "canvas.h"
+#include <QPen>
 Tool::Tool(Canvas *canvas):m_canvas(canvas)
 {
 

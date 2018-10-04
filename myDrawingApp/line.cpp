@@ -7,6 +7,7 @@ Line::Line():point(100,100)
 
 void Line::draw(QPainter *painter)
 {
+    painter->setPen(pen);
     painter->drawLine(getStartPoint(), point);
 }
 

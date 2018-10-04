@@ -20,7 +20,7 @@ public:
     void setPenColor(QColor color);
     void setPen(QPainter *painter);
 
-private:
+protected:
     QPoint StartPoint;
     QPen pen;
 };
