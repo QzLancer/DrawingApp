@@ -38,3 +38,8 @@ void Tool::setPen(QPen pen)
 {
     m_pen = pen;
 }
+
+void Tool::setBrush(QBrush brush)
+{
+    m_brush = brush;
+}

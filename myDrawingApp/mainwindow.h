@@ -24,6 +24,7 @@ public:
     ~MainWindow();
     void setActiveTool(Tool *tool);
     QPen getPen();
+    QBrush getBrush();
 
 private slots:
     void on_actionDrawRectangle_triggered();

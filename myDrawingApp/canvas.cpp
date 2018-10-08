@@ -32,7 +32,9 @@ bool Canvas::event(QEvent *event)
 
     bool result = m_tools->HandleEvent(event);
     pen = c_mainwindow->getPen();
+    brush = c_mainwindow->getBrush();
     m_tools->setPen(pen);
+    m_tools->setBrush(brush);
     repaint();
 
     return result;

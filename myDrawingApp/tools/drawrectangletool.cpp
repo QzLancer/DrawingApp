@@ -13,6 +13,7 @@ void DrawRectangleTool::mousePress(QMouseEvent *event)
     rectangle = new Rectangle;
     rectangle->setPenColor(m_pen.color());
     rectangle->setPenWidth(m_pen.width());
+    rectangle->setFillColor(m_brush.color());
     m_canvas->AddShape(rectangle);
     rectangle->setStartPoint(StartPoint);
     rectangle->setHeight(height);

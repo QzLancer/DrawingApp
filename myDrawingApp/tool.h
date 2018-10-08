@@ -2,6 +2,7 @@
 #define TOOL_H
 
 #include <QPen>
+#include <QBrush>
 class QEvent;
 class QMouseEvent;
 class QKeyEvent;
@@ -16,7 +17,7 @@ public:
     ~Tool();
     bool HandleEvent(QEvent *event);
     void setPen(QPen pen);
-
+    void setBrush(QBrush brush);
 
 protected:
     virtual void mousePress(QMouseEvent*) {}
@@ -25,6 +26,7 @@ protected:
     virtual void keyPress(QKeyEvent*) {}
     Canvas *m_canvas;
     QPen m_pen;
+    QBrush m_brush;
 };
 
 #endif // TOOL_H

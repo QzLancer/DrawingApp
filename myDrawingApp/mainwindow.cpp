@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     lineWidth = 1;
     fillColor = Qt::white;
+    brush.setColor(fillColor);
     ui->setupUi(this);
     ui->Selection->setChecked(true);
     m_canvas = new Canvas(this);
@@ -136,6 +137,11 @@ void MainWindow::on_LineWidthBox_valueChanged(int arg1)
 QPen MainWindow::getPen()
 {
     return pen;
+}
+
+QBrush MainWindow::getBrush()
+{
+    return brush;
 }
 
 void MainWindow::on_LineColorButton_clicked()

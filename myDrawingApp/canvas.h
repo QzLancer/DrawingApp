@@ -8,6 +8,7 @@
 #include "mainwindow.h"
 #include <QEvent>
 #include <QPen>
+#include <QBrush>
 
 class Circle;
 class Tool;
@@ -35,7 +36,7 @@ public:
     MainWindow *c_mainwindow;
     Tool *m_tools;
     QPen pen;
-
+    QBrush brush;
 };
 
 #endif // CANVAS_H
