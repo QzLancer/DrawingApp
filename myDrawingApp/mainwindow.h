@@ -40,9 +40,9 @@ private slots:
 
     void on_actionRectangle_triggered();
 
-    void on_ColorButton_clicked();
-
     void on_LineWidthBox_valueChanged(int arg1);
+
+    void on_LineColorButton_clicked();
 
 private:
     Ui::MainWindow *ui;

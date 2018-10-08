@@ -3,6 +3,7 @@
 #include <QPoint>
 #include <QPainter>
 #include <QPen>
+#include <QBrush>
 #include "mainwindow.h"
 
 //后续可添加线宽等参数
@@ -16,13 +17,16 @@ public:
     virtual void draw(QPainter *painter) = 0;
     int getPenWidth();
     QColor getPenColor();
+    QColor getFillColor();
     void setPenWidth(int width);
     void setPenColor(QColor color);
     void setPen(QPainter *painter);
+    void setFillColor(QColor color);
 
 protected:
     QPoint StartPoint;
     QPen pen;
+    QBrush brush;
 };
 
 #endif // SHAPE_H

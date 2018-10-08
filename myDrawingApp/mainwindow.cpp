@@ -33,11 +33,11 @@ MainWindow::MainWindow(QWidget *parent) :
             (new SelectionTool(m_canvas));
     setActiveTool(m_SelectionTool.get());
     ui->dockWidget->setBaseSize(199,335);
-    QPalette palette = ui->ColorButton->palette();
+    QPalette palette = ui->LineColorButton->palette();
     palette.setColor(QPalette::Button, Qt::black);
-    ui->ColorButton->setPalette(palette);
-    ui->ColorButton->setAutoFillBackground(true);
-    ui->ColorButton->setFlat(true);
+    ui->LineColorButton->setPalette(palette);
+    ui->LineColorButton->setAutoFillBackground(true);
+    ui->LineColorButton->setFlat(true);
 
 }
 
@@ -120,17 +120,6 @@ void MainWindow::setActiveTool(Tool *tool)
     m_canvas->setActiveTool(m_tool);
 }
 
-void MainWindow::on_ColorButton_clicked()
-{
-    lineColor = QColorDialog::getColor();
-    QPalette palette = ui->ColorButton->palette();
-    palette.setColor(QPalette::Button,lineColor);
-    ui->ColorButton->setPalette(palette);
-    ui->ColorButton->setAutoFillBackground(true);
-    ui->ColorButton->setFlat(true);
-    pen.setColor(lineColor);
-}
-
 void MainWindow::on_LineWidthBox_valueChanged(int arg1)
 {
     lineWidth = ui->LineWidthBox->value();
@@ -140,4 +129,15 @@ void MainWindow::on_LineWidthBox_valueChanged(int arg1)
 QPen MainWindow::getPen()
 {
     return pen;
+}
+
+void MainWindow::on_LineColorButton_clicked()
+{
+    lineColor = QColorDialog::getColor();
+    QPalette palette = ui->LineColorButton->palette();
+    palette.setColor(QPalette::Button,lineColor);
+    ui->LineColorButton->setPalette(palette);
+    ui->LineColorButton->setAutoFillBackground(true);
+    ui->LineColorButton->setFlat(true);
+    pen.setColor(lineColor);
 }

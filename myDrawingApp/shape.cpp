@@ -4,6 +4,8 @@ Shape::Shape()
 {
     StartPoint.setX(50);
     StartPoint.setY(50);
+    brush.setStyle(Qt::SolidPattern);
+    brush.setColor(Qt::blue);
 }
 
 QPoint Shape::getStartPoint() const
@@ -32,6 +34,11 @@ QColor Shape::getPenColor()
     return pen.color();
 }
 
+QColor Shape::getFillColor()
+{
+    return brush.color();
+}
+
 void Shape::setPenWidth(int width)
 {
     pen.setWidth(width);
@@ -45,4 +52,9 @@ void Shape::setPenColor(QColor color)
 void Shape::setPen(QPainter *painter)
 {
     painter->setPen(pen);
+}
+
+void Shape::setFillColor(QColor color)
+{
+    brush.setColor(color);
 }
