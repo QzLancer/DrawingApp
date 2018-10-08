@@ -5,7 +5,6 @@ Shape::Shape()
     StartPoint.setX(50);
     StartPoint.setY(50);
     brush.setStyle(Qt::SolidPattern);
-    brush.setColor(Qt::blue);
 }
 
 QPoint Shape::getStartPoint() const

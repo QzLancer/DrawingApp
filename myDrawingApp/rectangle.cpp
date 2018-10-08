@@ -31,5 +31,6 @@ void Rectangle::draw(QPainter *painter)
     int x = getStartPoint().x();
     int y = getStartPoint().y();
     painter->setPen(pen);
+    painter->setBrush(brush);
     painter->drawRect(x,y,width,height);
 }

@@ -44,6 +44,8 @@ private slots:
 
     void on_LineColorButton_clicked();
 
+    void on_FillColorButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     void uncheckAllToolBar();
@@ -54,7 +56,9 @@ private:
     std::unique_ptr<SelectionTool> m_SelectionTool;
     QColor lineColor;
     int lineWidth;
+    QColor fillColor;
     QPen pen;
+    QBrush brush;
 
 public:
     Canvas *m_canvas;

@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    lineWidth = 1;
+    fillColor = Qt::white;
     ui->setupUi(this);
     ui->Selection->setChecked(true);
     m_canvas = new Canvas(this);
@@ -38,7 +40,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->LineColorButton->setPalette(palette);
     ui->LineColorButton->setAutoFillBackground(true);
     ui->LineColorButton->setFlat(true);
-
+    palette.setColor(QPalette::Button, Qt::white);
+    ui->FillColorButton->setPalette(palette);
+    ui->FillColorButton->setAutoFillBackground(true);
+    ui->FillColorButton->setFlat(true);
 }
 
 MainWindow::~MainWindow()
@@ -89,6 +94,7 @@ void MainWindow::on_actionCircle_triggered()
     Circle *m_circle=new Circle;
     m_circle->setPenColor(lineColor);
     m_circle->setPenWidth(lineWidth);
+    m_circle->setFillColor(fillColor);
     DrawCircleDialog *circledialog=new DrawCircleDialog(this, m_circle);
     circledialog->show();
     m_canvas->AddShape(m_circle);
@@ -109,6 +115,7 @@ void MainWindow::on_actionRectangle_triggered()
     Rectangle *m_rectangle=new Rectangle;
     m_rectangle->setPenColor(lineColor);
     m_rectangle->setPenWidth(lineWidth);
+    m_rectangle->setFillColor(fillColor);
     DrawRectangleDialog *recdialog=new DrawRectangleDialog(this, m_rectangle);
     recdialog->show();
     m_canvas->AddShape(m_rectangle);
@@ -137,7 +144,14 @@ void MainWindow::on_LineColorButton_clicked()
     QPalette palette = ui->LineColorButton->palette();
     palette.setColor(QPalette::Button,lineColor);
     ui->LineColorButton->setPalette(palette);
-    ui->LineColorButton->setAutoFillBackground(true);
-    ui->LineColorButton->setFlat(true);
     pen.setColor(lineColor);
+}
+
+void MainWindow::on_FillColorButton_clicked()
+{
+    fillColor = QColorDialog::getColor();
+    QPalette palette = ui->FillColorButton->palette();
+    palette.setColor(QPalette::Button,fillColor);
+    ui->FillColorButton->setPalette(palette);
+    brush.setColor(fillColor);
 }
