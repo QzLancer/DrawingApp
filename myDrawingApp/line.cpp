@@ -22,6 +22,16 @@ void Line::setPoint(int x, int y)
     point.setY(y);
 }
 
+void Line::setPointX(int x)
+{
+    point.setX(x);
+}
+
+void Line::setPointY(int y)
+{
+    point.setY(y);
+}
+
 QPoint Line::getPoint()
 {
     return point;

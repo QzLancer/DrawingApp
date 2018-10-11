@@ -13,7 +13,8 @@ public:
     Shape();
     QPoint getStartPoint() const;
     void setStartPoint(QPoint point);
-    void setStartPoint(int x, int y);
+    void setStartPointX(int x);
+    void setStartPointY(int y);
     virtual void draw(QPainter *painter) = 0;
     int getPenWidth();
     QColor getPenColor();

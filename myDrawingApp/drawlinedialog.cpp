@@ -22,25 +22,25 @@ DrawLineDialog::~DrawLineDialog()
 
 void DrawLineDialog::on_X1box_valueChanged(int arg1)
 {
-    p_line->setStartPoint(ui->X1box->value(),ui->Y1box->value());
+    p_line->setStartPointX(ui->X1box->value());
     p_mainwindow->m_canvas->repaint();
 }
 
 void DrawLineDialog::on_Y1box_valueChanged(int arg1)
 {
-    p_line->setStartPoint(ui->X1box->value(),ui->Y1box->value());
+    p_line->setStartPointY(ui->X1box->value());
     p_mainwindow->m_canvas->repaint();
 }
 
 void DrawLineDialog::on_X2box_valueChanged(int arg1)
 {
-    p_line->setPoint(ui->X2box->value(),ui->Y2box->value());
+    p_line->setPointX(ui->X2box->value());
     p_mainwindow->m_canvas->repaint();
 }
 
 void DrawLineDialog::on_Y2box_valueChanged(int arg1)
 {
-    p_line->setPoint(ui->X2box->value(),ui->Y2box->value());
+    p_line->setPointY(ui->Y2box->value());
     p_mainwindow->m_canvas->repaint();
 }
 

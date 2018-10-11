@@ -22,13 +22,13 @@ DrawRectangleDialog::~DrawRectangleDialog()
 
 void DrawRectangleDialog::on_Xbox_valueChanged(int arg1)
 {
-    p_rectangle->setStartPoint(ui->Xbox->value(),ui->Ybox->value());
+    p_rectangle->setStartPointX(ui->Xbox->value());
     p_MainWindow->m_canvas->repaint();
 }
 
 void DrawRectangleDialog::on_Ybox_valueChanged(int arg1)
 {
-    p_rectangle->setStartPoint(ui->Xbox->value(),ui->Ybox->value());
+    p_rectangle->setStartPointY(ui->Ybox->value());
     p_MainWindow->m_canvas->repaint();
 }
 

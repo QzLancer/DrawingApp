@@ -10,6 +10,8 @@ public:
     void draw(QPainter *painter) override;
     void setPoint(QPoint p);
     void setPoint(int x, int y);
+    void setPointX(int x);
+    void setPointY(int y);
     QPoint getPoint();
 
 private:

@@ -1,10 +1,13 @@
 #include "shape.h"
 #include <QPoint>
+#include <QDebug>
+
 Shape::Shape()
 {
     StartPoint.setX(50);
     StartPoint.setY(50);
     brush.setStyle(Qt::SolidPattern);
+    qDebug() << "shape_StartPoint.x: " << StartPoint.x();
 }
 
 QPoint Shape::getStartPoint() const
@@ -17,9 +20,14 @@ void Shape::setStartPoint(QPoint point)
     StartPoint = point;
 }
 
-void Shape::setStartPoint(int x, int y)
+void Shape::setStartPointX(int x)
 {
     StartPoint.setX(x);
+
+}
+
+void Shape::setStartPointY(int y)
+{
     StartPoint.setY(y);
 }
 

@@ -2,7 +2,7 @@
 #include "ui_drawcircledialog.h"
 #include "circle.h"
 #include "canvas.h"
-
+#include <QDebug>
 
 DrawCircleDialog::DrawCircleDialog(MainWindow *parent,Circle *circle) :
     QDialog(parent),
@@ -11,9 +11,10 @@ DrawCircleDialog::DrawCircleDialog(MainWindow *parent,Circle *circle) :
 {
     ui->setupUi(this);
     p_mainwindow=parent;
-    ui->RadiusBox->setValue(m_circle->getRadius());
-    ui->Ybox->setValue(m_circle->getStartPoint().y());
     ui->Xbox->setValue(m_circle->getStartPoint().x());
+    ui->Ybox->setValue(m_circle->getStartPoint().y());
+    ui->RadiusBox->setValue(m_circle->getRadius());
+    qDebug() << "circle_startpoint.x: " << m_circle->getStartPoint().x();
 }
 
 DrawCircleDialog::~DrawCircleDialog()
@@ -35,13 +36,13 @@ void DrawCircleDialog::on_RadiusBox_valueChanged(int arg1)
 
 void DrawCircleDialog::on_Xbox_valueChanged(int arg1)
 {
-    m_circle->setStartPoint(QPoint(ui->Xbox->value(),ui->Ybox->value()));
+    m_circle->setStartPointX(ui->Xbox->value());
     p_mainwindow->m_canvas->repaint();
 }
 
 
 void DrawCircleDialog::on_Ybox_valueChanged(int arg1)
 {
-    m_circle->setStartPoint(QPoint(ui->Xbox->value(),ui->Ybox->value()));
+    m_circle->setStartPointY(ui->Ybox->value());
     p_mainwindow->m_canvas->repaint();
 }
