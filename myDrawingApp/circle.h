@@ -10,7 +10,7 @@ public:
     int getRadius() const;
     void draw(QPainter *painter) override;
     bool Contains(int x, int y) override;
-
+    QRect getBoundary() override;
 private:
     int radius;
 };

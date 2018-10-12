@@ -32,3 +32,15 @@ bool Circle::Contains(int x, int y)
     int ActualRadius = radius + pen.width();
     return DistoStartPoint <= ActualRadius*ActualRadius;
 }
+
+QRect Circle::getBoundary()
+{
+    int rad = radius + pen.width() + 3;
+
+    int x = StartPoint.x() - rad;
+    int y = StartPoint.y() - rad;
+    int w = rad * 2;
+    int h = w;
+
+    return QRect(x, y, w, h);
+}

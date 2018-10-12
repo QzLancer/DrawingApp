@@ -43,3 +43,12 @@ bool Rectangle::Contains(int x, int y)
     return  (difX * (width - difX) >= 0) &&
             (difY * (height - difY) >= 0);
 }
+
+QRect Rectangle::getBoundary()
+{
+    int margin = 4;
+    return QRect(StartPoint.x() - margin,
+                 StartPoint.y() - margin,
+                 width + margin+2 +1,
+                 height +margin+2 + 1);
+}

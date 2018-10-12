@@ -14,6 +14,7 @@ public:
     void setPointY(int y);
     QPoint getPoint();
     bool Contains(int x, int y) override;
+    QRect getBoundary() override;
 
 private:
     QPoint point;

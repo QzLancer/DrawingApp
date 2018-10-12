@@ -13,6 +13,7 @@ public:
     int getWidth();
     void draw(QPainter *painter) override;
     bool Contains(int x, int y) override;
+    QRect getBoundary() override;
 
 private:
     int height;

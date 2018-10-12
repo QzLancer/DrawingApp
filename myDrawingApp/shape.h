@@ -5,7 +5,7 @@
 #include <QPen>
 #include <QBrush>
 #include "mainwindow.h"
-
+#include <QRect>
 //后续可添加线宽等参数
 class Shape
 {
@@ -24,6 +24,7 @@ public:
     void setPen(QPainter *painter);
     void setFillColor(QColor color);
     virtual bool Contains(int x, int y) = 0;
+    virtual QRect getBoundary() = 0;
 
 protected:
     QPoint StartPoint;

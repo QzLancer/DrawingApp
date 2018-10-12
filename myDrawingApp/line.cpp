@@ -65,3 +65,11 @@ bool Line::Contains(int x, int y)
     qDebug() << inRange;
     return discriminant >= 0 && inRange;
 }
+
+QRect Line::getBoundary()
+{
+    return QRect(StartPoint.x(),
+                 StartPoint.y(),
+                 point.x() - StartPoint.x(),
+                 point.y() - StartPoint.y());
+}
