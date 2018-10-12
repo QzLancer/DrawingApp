@@ -7,7 +7,8 @@
 Canvas::Canvas(MainWindow *parent) : QWidget(parent),
     ShapeGroup(new Group),
     c_mainwindow(parent),
-    m_tools(new Tool(this))
+    m_tools(new Tool(this)),
+    selection(new ActiveSelection)
 {
     setPalette(QPalette(Qt::white));
     setAutoFillBackground(true);
@@ -17,7 +18,8 @@ void Canvas::paintEvent(QPaintEvent *event)
 {
     QPainter *painter = new QPainter(this);
     ShapeGroup->draw(painter);
-
+    selection->draw(painter);
+    delete painter;
 }
 
 bool Canvas::event(QEvent *event)
@@ -57,5 +59,5 @@ void Canvas::setActiveTool(Tool *tool)
 
 Shape *Canvas::getShapeFromPos(int x, int y)
 {
-    ShapeGroup->getClicked(x, y);
+    return ShapeGroup->getClicked(x, y);
 }

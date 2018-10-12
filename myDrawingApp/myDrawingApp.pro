@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     tools/drawcircletool.cpp \
     tools/drawlinetool.cpp \
     tools/drawrectangletool.cpp \
-    tools/selectiontool.cpp
+    tools/selectiontool.cpp \
+    activeselection.cpp
 
 HEADERS  += mainwindow.h \
     canvas.h \
@@ -54,7 +55,8 @@ HEADERS  += mainwindow.h \
     tools/drawcircletool.h \
     tools/drawlinetool.h \
     tools/drawrectangletool.h \
-    tools/selectiontool.h
+    tools/selectiontool.h \
+    activeselection.h
 
 FORMS    += mainwindow.ui \
     drawcircledialog.ui \

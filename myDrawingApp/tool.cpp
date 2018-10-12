@@ -4,7 +4,8 @@
 #include <QKeyEvent>
 #include "canvas.h"
 
-Tool::Tool(Canvas *canvas):m_canvas(canvas)
+Tool::Tool(Canvas *canvas):m_canvas(canvas),
+    selection(m_canvas->selection)
 {
 
 }

@@ -10,6 +10,8 @@
 #include <QPen>
 #include <QBrush>
 #include "shape.h"
+#include "activeselection.h"
+
 class Circle;
 class Tool;
 
@@ -38,6 +40,7 @@ public:
     Tool *m_tools;
     QPen pen;
     QBrush brush;
+    ActiveSelection *selection;
 };
 
 #endif // CANVAS_H

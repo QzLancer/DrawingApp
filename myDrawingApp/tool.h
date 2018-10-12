@@ -3,6 +3,7 @@
 
 #include <QPen>
 #include <QBrush>
+#include "activeselection.h"
 class QEvent;
 class QMouseEvent;
 class QKeyEvent;
@@ -27,6 +28,7 @@ protected:
     Canvas *m_canvas;
     QPen m_pen;
     QBrush m_brush;
+    ActiveSelection *selection;
 };
 
 #endif // TOOL_H
