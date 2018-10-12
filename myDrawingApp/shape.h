@@ -25,11 +25,15 @@ public:
     void setFillColor(QColor color);
     virtual bool Contains(int x, int y) = 0;
     virtual QRect getBoundary() = 0;
+    void Selected(bool select);
+    bool isSelected();
+
 
 protected:
     QPoint StartPoint;
     QPen pen;
     QBrush brush;
+    bool selection;
 };
 
 #endif // SHAPE_H

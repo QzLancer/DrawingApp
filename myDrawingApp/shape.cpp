@@ -7,6 +7,7 @@ Shape::Shape()
     StartPoint.setX(50);
     StartPoint.setY(50);
     brush.setStyle(Qt::SolidPattern);
+    selection = false;
 }
 
 QPoint Shape::getStartPoint() const
@@ -63,4 +64,14 @@ void Shape::setPen(QPainter *painter)
 void Shape::setFillColor(QColor color)
 {
     brush.setColor(color);
+}
+
+void Shape::Selected(bool select)
+{
+    selection = select;
+}
+
+bool Shape::isSelected()
+{
+    return selection;
 }

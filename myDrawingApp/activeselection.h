@@ -10,6 +10,7 @@ class ActiveSelection
 public:
     ActiveSelection();
     void addShape(Shape *shape);
+    void removeShape(Shape *shape);
     void clear();
     int size();
     void draw(QPainter *painter);

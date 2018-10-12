@@ -17,8 +17,30 @@ void SelectionTool::mousePress(QMouseEvent *event)
     {
         selection->clear();
         selection->addShape(clicked);
+        clicked->Selected(true);
     }
 
+    else if(clicked != nullptr
+            && event->modifiers() & Qt::ShiftModifier
+            )
+    {
+        if(clicked->isSelected())
+        {
+            selection->removeShape(clicked);
+            clicked->Selected(false);
+        }
+        else
+        {
+            selection->addShape(clicked);
+            clicked->Selected(true);
+        }
+    }
+
+    else if(clicked == nullptr
+            && !(event->modifiers() & Qt::ShiftModifier))
+    {
+        selection->clear();
+    }
 }
 
 void SelectionTool::mouseMove(QMouseEvent *event)

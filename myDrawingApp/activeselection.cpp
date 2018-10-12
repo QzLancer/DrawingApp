@@ -11,8 +11,20 @@ void ActiveSelection::addShape(Shape *shape)
     SelectedShape.push_back(shape);
 }
 
+void ActiveSelection::removeShape(Shape *shape)
+{
+    auto i = SelectedShape.begin();
+    for(; i<= SelectedShape.end(); i++)
+    {
+        if(*i == shape)
+            SelectedShape.erase(i);
+    }
+}
+
 void ActiveSelection::clear()
 {
+    for(Shape *shape : SelectedShape)
+        shape->Selected(false);
     SelectedShape.clear();
 }
 
