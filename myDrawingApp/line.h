@@ -13,6 +13,7 @@ public:
     void setPointX(int x);
     void setPointY(int y);
     QPoint getPoint();
+    bool Contains(int x, int y) override;
 
 private:
     QPoint point;

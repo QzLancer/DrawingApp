@@ -15,7 +15,6 @@ Canvas::Canvas(MainWindow *parent) : QWidget(parent),
 
 void Canvas::paintEvent(QPaintEvent *event)
 {
-    qDebug() << "paintEvent.";
     QPainter *painter = new QPainter(this);
     ShapeGroup->draw(painter);
 
@@ -54,4 +53,9 @@ void Canvas::AddShape(Shape *shape)
 void Canvas::setActiveTool(Tool *tool)
 {
     m_tools = tool;
+}
+
+Shape *Canvas::getShapeFromPos(int x, int y)
+{
+    ShapeGroup->getClicked(x, y);
 }

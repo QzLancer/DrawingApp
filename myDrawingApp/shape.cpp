@@ -7,7 +7,6 @@ Shape::Shape()
     StartPoint.setX(50);
     StartPoint.setY(50);
     brush.setStyle(Qt::SolidPattern);
-    qDebug() << "shape_StartPoint.x: " << StartPoint.x();
 }
 
 QPoint Shape::getStartPoint() const

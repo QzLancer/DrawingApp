@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     lineWidth = 1;
-    fillColor = Qt::white;
+    fillColor = Qt::gray;
     brush.setColor(fillColor);
     ui->setupUi(this);
     ui->Selection->setChecked(true);
@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->LineColorButton->setPalette(palette);
     ui->LineColorButton->setAutoFillBackground(true);
     ui->LineColorButton->setFlat(true);
-    palette.setColor(QPalette::Button, Qt::white);
+    palette.setColor(QPalette::Button, Qt::gray);
     ui->FillColorButton->setPalette(palette);
     ui->FillColorButton->setAutoFillBackground(true);
     ui->FillColorButton->setFlat(true);

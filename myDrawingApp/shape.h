@@ -23,6 +23,7 @@ public:
     void setPenColor(QColor color);
     void setPen(QPainter *painter);
     void setFillColor(QColor color);
+    virtual bool Contains(int x, int y) = 0;
 
 protected:
     QPoint StartPoint;

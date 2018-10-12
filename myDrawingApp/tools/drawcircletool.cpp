@@ -8,7 +8,7 @@
 DrawCircleTool::DrawCircleTool(Canvas *canvas):
     Tool(canvas)
 {
-    qDebug() << "New Circle is Structed.";
+
 }
 
 DrawCircleTool::~DrawCircleTool()
@@ -18,7 +18,6 @@ DrawCircleTool::~DrawCircleTool()
 
 void DrawCircleTool::mousePress(QMouseEvent *event)
 {
-    qDebug()<< "mousePress";
     StartPoint = event->pos();
     m_circle = new Circle;
     m_circle->setPenColor(m_pen.color());

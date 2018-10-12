@@ -1,5 +1,5 @@
 #include "rectangle.h"
-
+#include <math.h>
 Rectangle::Rectangle():height(100),
                        width(100)
 {
@@ -33,4 +33,13 @@ void Rectangle::draw(QPainter *painter)
     painter->setPen(pen);
     painter->setBrush(brush);
     painter->drawRect(x,y,width,height);
+}
+
+bool Rectangle::Contains(int x, int y)
+{
+    //How to define the actual select range?
+    int difX = x - StartPoint.x();
+    int difY = y - StartPoint.y();
+    return  (difX * (width - difX) >= 0) &&
+            (difY * (height - difY) >= 0);
 }

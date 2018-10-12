@@ -12,6 +12,7 @@ public:
     int getHeight();
     int getWidth();
     void draw(QPainter *painter) override;
+    bool Contains(int x, int y) override;
 
 private:
     int height;

@@ -3,6 +3,7 @@
 #include <vector>
 #include "Shape.h"
 #include <QPainter>
+
 //Can add some action about 'vector'
 
 class Group
@@ -14,6 +15,7 @@ public:
     std::vector<Shape*> getvecShape();
     int getGroupSize();
     void draw(QPainter *painter);
+    Shape *getClicked(int x, int y);
 
 private:
     std::vector<Shape*> vecShape;

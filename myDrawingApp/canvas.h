@@ -9,7 +9,7 @@
 #include <QEvent>
 #include <QPen>
 #include <QBrush>
-
+#include "shape.h"
 class Circle;
 class Tool;
 
@@ -21,6 +21,7 @@ public:
     ~Canvas();
     void AddShape(Shape *shape);
     void setActiveTool(Tool *tool);
+    Shape *getShapeFromPos(int x, int y);
 
 signals:
 

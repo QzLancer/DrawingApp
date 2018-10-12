@@ -1,4 +1,5 @@
 #include "group.h"
+#include <QDebug>
 
 Group::Group()
 {
@@ -24,4 +25,17 @@ void Group::draw(QPainter *painter)
 {
     for(Shape *shape: vecShape)
         shape->draw(painter);
+}
+
+Shape *Group::getClicked(int x, int y)
+{
+    for(int i = vecShape.size()-1; i>=0; i--)
+    {
+        if(vecShape[i]->Contains(x, y))
+        {
+            qDebug() << "vecShape:" << i << "is Selected";
+            return vecShape[i];
+        }
+    }
+    return nullptr;
 }

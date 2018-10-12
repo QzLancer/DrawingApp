@@ -9,6 +9,8 @@ public:
     void setRadius(int r);
     int getRadius() const;
     void draw(QPainter *painter) override;
+    bool Contains(int x, int y) override;
+
 private:
     int radius;
 };
